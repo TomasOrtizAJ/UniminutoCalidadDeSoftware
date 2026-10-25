@@ -1,0 +1,49 @@
+@mixin custom-page() {
+  padding-top: 1rem;
+  background-color: var(--white);
+  justify-content: left;
+}
+@mixin custom-roots() {
+  border-bottom: 2px solid var(--primary);
+  margin-bottom: 1rem;
+}
+@mixin custom-root() {
+  font-size: 1rem;
+  text-transform: capitalize;
+  color: var(--text-color-main);
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+
+  &.Mui-selected {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+  }
+
+  &:hover {
+    color: var(--primary-dark);
+  }
+}
+@mixin custom-scrollButtons() {
+  color: var(--primary);
+}
+@mixin custom-Box() {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+.custom-tab {
+  @include custom-page();
+
+  .MuiTabs-root {
+    @include custom-roots();
+
+    .MuiTab-root {
+      @include custom-root();
+    }
+
+    .MuiTabs-scrollButtons {
+      @include custom-scrollButtons();
+    }
+  }
+  .MuiBox-root {
+    @include custom-Box();
+  }
+}

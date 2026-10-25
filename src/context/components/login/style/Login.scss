@@ -1,0 +1,77 @@
+@mixin custom-login() {
+  width: 100%;
+  max-width: 450px;
+  margin: 50px auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  h6 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+  }
+}
+@mixin custom-form-group() {
+  margin-bottom: 1.5rem;
+  text-align: left;
+
+  label {
+    font-size: 1rem;
+    color: #333;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  input {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  input:focus {
+    border-color: #007bff;
+  }
+}
+@mixin custom-button($BgC) {
+  width: 100%;
+  padding: 1rem 1rem;
+  background-color: $BgC;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+
+  &:hover {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+  }
+}
+.login-form {
+  @include custom-login();
+  .form-group {
+    @include custom-form-group();
+  }
+
+  button {
+    @include custom-button(#007bff);
+  }
+  .button-Home {
+    @include custom-button(#dd1717);
+  }
+}

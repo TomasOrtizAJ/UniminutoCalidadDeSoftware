@@ -1,0 +1,66 @@
+@mixin custom-page() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  background-color: #fff;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  scrollbar-width: none;
+
+  h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #115293;
+    margin-bottom: 1rem;
+  }
+}
+@mixin custom-rootT() {
+  font-weight: bold;
+}
+@mixin custom-rootTF() {
+  margin-bottom: 1rem;
+}
+@mixin custom-button() {
+  border: 1px solid #1976d2;
+  color: #1976d2;
+  padding: 8px 12px;
+  font-weight: 500;
+  border-radius: 8px;
+  text-transform: capitalize;
+  justify-content: center;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+}
+@mixin custom-modal-actions() {
+  margin-top: 1.5rem;
+  text-align: right;
+
+  .MuiButton {
+    @include custom-button();
+  }
+}
+.custom-modal {
+  @include custom-page();
+
+  .MuiTypography-root {
+    @include custom-rootT();
+  }
+
+  .MuiTextField-root {
+    @include custom-rootTF();
+  }
+}
+.modal-actions {
+  @include custom-modal-actions();
+}

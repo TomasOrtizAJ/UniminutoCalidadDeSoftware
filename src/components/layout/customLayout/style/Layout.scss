@@ -1,0 +1,26 @@
+@mixin custom-layout-container() {
+  display: block;
+  height: 100vh;
+}
+@mixin custom-sidebar() {
+  width: 250px;
+  background-color: #f5f5f5;
+}
+@mixin custom-content-container() {
+  padding-top: 4rem;
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+  padding-bottom: 3rem;
+  overflow-x: auto;
+}
+
+.layout-container {
+  @include custom-layout-container();
+}
+
+.sidebar {
+  @include custom-sidebar();
+}
+.content-container {
+  @include custom-content-container();
+}
